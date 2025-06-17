@@ -37,7 +37,7 @@ REMOTE=${PLUGIN_REMOTE:-${REMOTE:-"origin"}}
 info "Configuring git user"
 git config --global user.email "${GIT_USER_EMAIL}"
 git config --global user.name "${GIT_USER_NAME}"
-git config --global --add safe.directory /drone/src
+git config --global --add safe.directory /harness
 git config --global credential.helper 'cache --timeout 600'
 
 # Configure git credentials
