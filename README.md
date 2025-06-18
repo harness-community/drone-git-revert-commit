@@ -42,8 +42,8 @@ steps:
 | `git_user_email` | Git user email | Uses Drone/CI environment variables |
 | `git_user_name` | Git user name | Uses Drone/CI environment variables |
 | `branch` | Target branch to push to | `DRONE_BRANCH` or "main" |
-| `create_revert_branch` | Whether to create a separate branch for the revert | `true` |
-| `revert_branch_prefix` | Prefix for the revert branch name | "reverted-pr-" |
+| `create_revert_branch` | Whether to create a separate branch for the revert | `false` |
+| `revert_branch_prefix` | Prefix for the revert branch name | "revert-" |
 | `remote` | Git remote to use | "origin" |
 
 ## Environment Variables
