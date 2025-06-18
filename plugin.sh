@@ -29,15 +29,15 @@ COMMIT_SHA=${PLUGIN_COMMIT_SHA:-${COMMIT_SHA}}
 GIT_USER_EMAIL=${PLUGIN_GIT_USER_EMAIL:-${DRONE_COMMIT_AUTHOR_EMAIL:-${CI_COMMIT_AUTHOR_EMAIL}}}
 GIT_USER_NAME=${PLUGIN_GIT_USER_NAME:-${DRONE_COMMIT_AUTHOR:-${CI_COMMIT_AUTHOR:-${DRONE_COMMIT_AUTHOR_NAME:-${CI_COMMIT_AUTHOR_NAME}}}}}
 BRANCH=${PLUGIN_BRANCH:-"main"}
-CREATE_REVERT_BRANCH=${PLUGIN_CREATE_REVERT_BRANCH:-${CREATE_REVERT_BRANCH:-"true"}}
-REVERT_BRANCH_PREFIX=${PLUGIN_REVERT_BRANCH_PREFIX:-${REVERT_BRANCH_PREFIX:-"reverted-pr-"}}
+CREATE_REVERT_BRANCH=${PLUGIN_CREATE_REVERT_BRANCH:-${CREATE_REVERT_BRANCH:-"false"}}
+REVERT_BRANCH_PREFIX=${PLUGIN_REVERT_BRANCH_PREFIX:-${REVERT_BRANCH_PREFIX:-"revert-"}}
 REMOTE=${PLUGIN_REMOTE:-${REMOTE:-"origin"}}
 
 # Configure git
 info "Configuring git user"
 git config --global user.email "${GIT_USER_EMAIL}"
 git config --global user.name "${GIT_USER_NAME}"
-git config --global --add safe.directory /drone/src
+git config --global --add safe.directory /harness
 git config --global credential.helper 'cache --timeout 600'
 
 # Configure git credentials
